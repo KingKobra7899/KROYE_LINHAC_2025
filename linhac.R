@@ -2,6 +2,12 @@ library(readr)
 library(ggplot2)
 library(sportyR)
 library(dplyr)
+library(tidyverse)
+library(ggpubr)
+library(sportyR)  
+library(viridis) 
+library(gridExtra)
+
 data <- read_csv("Linhac24-25_Sportlogiq.csv")
 
 
