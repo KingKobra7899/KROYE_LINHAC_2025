@@ -117,14 +117,13 @@ model <- keras_model_sequential() %>%
                }) %>%
   layer_dense(units = 32, activation = "relu") %>%
   layer_dense(units = 16, activation = "relu") %>%
-  layer_dense(units = 12, activation = "relu") %>%
   layer_dense(units = 8, activation = "relu") %>%
   layer_dense(units = 4, activation = "relu") %>%
   layer_dense(units = 2, activation = "relu") %>%
   layer_dense(units = 1, activation = "sigmoid")
 
 model %>% compile(
-  optimizer = optimizer_rmsprop(0.00005),
+  optimizer = optimizer_rmsprop(0.0005),
   loss = 'mean_squared_error',
   metrics = c("mae")
 )
@@ -134,7 +133,7 @@ model %>% compile(
 history <- model %>% fit(
   x = training_data,
   y = pass_dataset$xG,
-  validation_split = 0.125,
+  validation_split = 0.1,
   shuffle = T,
   epochs = 32
 )

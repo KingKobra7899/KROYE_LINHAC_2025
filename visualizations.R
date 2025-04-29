@@ -1,15 +1,5 @@
 all_passes$distance <- sqrt((all_passes$pass_x - all_passes$reception_x)^2 + (all_passes$pass_y - all_passes$reception_y)^2)
 all_passes$vel <- all_passes$distance / all_passes$dt
-library(tidyverse)
-library(ggpubr)
-library(sportyR)  
-library(viridis) 
-library(gridExtra)
-library(ggplot2)
-
-
-
-
 
 create_rink <- function() {
   geom_hockey("nhl", display_range = "offense") +
